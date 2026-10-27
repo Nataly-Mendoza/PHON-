@@ -1,0 +1,6 @@
+{
+  "name": "PHONÉ - Comunicación Aumentativa y Alternativa para Adultos",
+  "description": "Modelo de software adaptativo de Comunicación Aumentativa y Alternativa (CAA) para adultos con parálisis cerebral en el contexto mexicano. Tu voz, a tu manera.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

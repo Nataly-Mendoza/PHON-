@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --phone-navy: #042C71;
+    --phone-blue: #1F5AC4;
+    --phone-mid-blue: #4B76BC;
+    --phone-light-blue: #E3EEFC;
+    --phone-bg: #F8FAFC;
+    --phone-surface: #FFFFFF;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #0f172a;
+    background-color: #f8fafc;
+  }
+
+  /* Accessible high-contrast focus rings */
+  :focus-visible {
+    outline: 3px solid #1F5AC4;
+    outline-offset: 3px;
+  }
+}
+
+/* High-Contrast Mode Overrides */
+.high-contrast-mode {
+  --phone-navy: #000000;
+  --phone-blue: #FFE500;
+  --phone-mid-blue: #00E5FF;
+  --phone-light-blue: #1A1A1A;
+  --phone-bg: #000000;
+  --phone-surface: #121212;
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+.high-contrast-mode button,
+.high-contrast-mode .hc-box {
+  border-color: #FFE500 !important;
+}
+
+.high-contrast-mode :focus-visible {
+  outline: 4px solid #FFE500 !important;
+  outline-offset: 4px;
+}
+
+/* Sequential Scanning Highlight Styles */
+.scanning-highlight {
+  position: relative;
+  outline: 4px solid #1F5AC4 !important;
+  outline-offset: 4px !important;
+  box-shadow: 0 0 0 8px rgba(31, 90, 196, 0.35), 0 10px 25px -5px rgba(31, 90, 196, 0.4) !important;
+  transform: scale(1.03);
+  z-index: 30;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s ease-in-out;
+}
+
+.high-contrast-mode .scanning-highlight {
+  outline: 5px solid #FFE500 !important;
+  outline-offset: 4px !important;
+  box-shadow: 0 0 0 8px rgba(255, 229, 0, 0.6) !important;
+  background-color: #262626 !important;
+  color: #FFE500 !important;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .scanning-highlight {
+    transform: none !important;
+  }
+}
